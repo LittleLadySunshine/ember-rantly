@@ -13,6 +13,16 @@ module.exports = function(environment) {
       }
     },
 
+contentSecurityPolicy: {
+  'default-src': "'none'",
+  'script-src': "'self'",
+  'font-src': "'self' http://fonts.gstatic.com http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0",
+  'connect-src': "'self' localhost:3000",
+  'img-src': "'self' http://www.gravatar.com",
+  'style-src': "'self' 'unsafe-inline' http://css-spinners.com/css/spinner/spinner.css http://fonts.googleapis.com http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0",
+  'media-src': "'self'"
+},
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
