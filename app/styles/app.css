@@ -1,0 +1,521 @@
+body, html {
+  margin: 0px;
+  height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.top-header {
+  background: #34495e;
+  min-height: 53px;
+  font-size: 16px;
+  padding-left: .8%;
+}
+
+.top-header a {
+  float: left;
+  display: block;
+  position: relative;
+  color: white;
+  padding: 1%;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  line-height: 23px;
+}
+
+a.brand {
+  font-size: 30px;
+  padding-left: .7%;
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.bottom-header {
+  background: #3498DB;
+  min-height: 50px;
+  width: 75%;
+  float: left;
+  padding: 7px 15px;
+}
+
+aside.content {
+  padding-left: 1.2%;
+  color: white
+}
+
+.search {
+  padding: 5px;
+  background: #3498DB;
+  position: relative;
+  min-height: 50px;
+  width: 100%;
+  float: left;
+}
+
+.search-area {
+  background: #3498DB;
+  padding: 5px;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 23px;
+  border: none;
+  color: black;
+  margin: 0px;
+  width: 100%;
+}
+
+.search-area::-webkit-input-placeholder {
+  color: white;
+}
+
+.search-area:focus {
+  outline: 0;
+}
+
+.user-area {
+  float: left;
+  width: 100%;
+  height: 100px;
+  border-radius: 25px 25px 0;
+}
+
+.user-photo {
+  display: block;
+  width: 100%;
+  height: 100px;
+  border: 4px dashed #34495e;
+  border-radius: 25px 25px 0;
+  background-image: url(http://www.gravatar.com/avatar/undefined?s=350);
+  background-position: center;
+}
+
+
+.main {
+  width: 74.5687%;
+  float: right;
+  padding: 15px 15px 0;
+  height: 570px;
+}
+
+.rants-navagation {
+  float: left;
+  width: 25%;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.2);
+}
+
+.content {
+  padding-left: 15px;
+}
+
+.a-rant, .a-user {
+  color: black;
+  width: 100%;
+  position: relative;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.2);
+  border-radius: 3px;
+  transition: .25s;
+  clear: both;
+  overflow: hidden;
+}
+
+.a-rant h3, .a-user h3 {
+  float: left;
+  font-family: 'Laila', serif;
+  font-weight: 700;
+  font-size: 29px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #34495e;
+}
+
+.rant-header, .user-header {
+  margin-bottom: 15px;
+  clear: both;
+  overflow: hidden;
+  margin-top: 0px;
+}
+
+
+.new-rant {
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.2);
+  padding: 15px;
+  border-radius: 3px;
+  overflow: hidden;
+  clear: both;
+}
+
+.new-rant-header {
+  margin-bottom: 15px;
+  clear: both;
+  overflow: hidden;
+}
+
+.new-rant-title {
+  float: left;
+  width: 60%;
+}
+
+.new-rant-buttons {
+  float: right;
+}
+
+.new-rant-title .new-title {
+  font-family: Laila, serif;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #34495E;
+  border: none;
+  border-bottom: 2px solid #ECF0F1;
+  border-radius: 0;
+  padding: 0;
+  font-size: 29px;
+  resize: none;
+  width: 100%;
+  margin-bottom: 15px;
+  height: 45px;
+}
+
+.new-rant .new-body, .new-email {
+  float: right;
+  font-size: 18px;
+  line-height: 1.1;
+  color: #34495E;
+  border: 2px solid #ECF0F1;
+  border-radius: 0;
+  padding: 0;
+  font-size: 29px;
+  width: 77%;
+  margin-bottom: 15px;
+  height: 45px;
+  min-height: 415px;
+}
+
+.small-user-area {
+  float: left;
+  width: 23%;
+}
+
+.small-user-photo {
+  display: block;
+  border: 4px dashed #34495e;
+  border-radius: 25px 25px 0;
+  height: 100px;
+  margin-bottom: 15px;
+  width: 90%;
+  background-image: url(http://www.gravatar.com/avatar/undefined?s=200);
+  background-position: center;
+}
+
+button.new-rant {
+  float: right;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 3px;
+  -webkit-transition: .25s;
+  transition: .25s;
+  background: white;
+  color: #1abc9c;
+  border: 1px solid #1abc9c;
+}
+
+button.new-rant:hover {
+  background: #1abc9c;
+  color: white;
+  border: 1px solid #1abc9c;
+}
+
+button.auth {
+  float: left;
+  width: 100%;
+  padding: 6px 12px;
+  font-size: 14px;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-transition: .25s;
+  transition: .25s;
+  margin-top: 15px;
+  border-radius: 3px;
+  background: #1abc9c;
+  color: white;
+  border: 1px solid white;
+}
+
+button.auth:hover {
+  background: white;
+  color: #1abc9c;
+  border: 1px solid #1abc9c;
+}
+
+button.edit-rant, button.edit-user {
+  float: right;
+  padding: 6px 12px;
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-transition: .25s;
+  transition: .25s;
+  border-radius: 3px;
+  background: #1abc9c;
+  color: white;
+  border: 1px solid white;
+  min-height: 30px;
+  min-width: 70px;
+}
+
+button.edit-rant:hover, button.edit-user:hover {
+  background: white;
+  color: #1abc9c;
+  border: 1px solid #1abc9c;
+}
+
+button.save-rant {
+  line-height: 1.42857;
+  border-radius: 3px;
+  margin-top: 0px;
+  margin-right: 15px;
+  background: #1abc9c;
+  color: white;
+  border: 1px solid white;
+}
+
+button.save-rant:hover {
+  background: white;
+  color: #1abc9c;
+  border: 1px solid #1abc9c;
+}
+
+button.cancel-rant {
+  line-height: 1.42857;
+  text-align: center;
+  white-space: nowrap;
+  margin-right: 15px;
+  border-radius: 3px;
+  background: #c0c0c0;
+  color: white;
+  border: 1px solid white;
+}
+
+button.cancel-rant:hover {
+  background: white;
+  color: #c0c0c0;
+  border: 1px solid #c0c0c0;
+}
+
+button.delete-rant {
+  line-height: 1.42857;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 3px;
+  background: #f1c40f;
+  color: white;
+  border: 1px solid white;
+}
+
+button.delete-rant:hover {
+  background: white;
+  color: #f1c40f;
+  border: 1px solid #f1c40f;
+}
+
+.new-rant-buttons button {
+  float: right;
+  padding: 6px 12px;
+  font-size: 14px;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.all-users {
+  font-family: 'Laila', serif;
+  font-weight: 300;
+}
+
+.user-block {
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.2);
+  width: 23.7%;
+  float: left;
+  min-height: 190px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+.user-block a {
+  color: black;
+}
+
+.user-block:first-of-type {
+  margin-left: 0px;
+}
+
+.user-block:nth-of-type(4n+1) {
+  margin-left: 0px;
+}
+
+.user-block h5 {
+  font-size: 16px;
+  font-weight: normal;
+  margin-top: 4%;
+  margin-bottom: 0px;
+}
+
+.user-block h6 {
+  font-size: 11px;
+  font-weight: normal;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.user-block .small-user-photo {
+  margin: auto;
+  margin-top: 5%;
+}
+
+.user-info {
+  margin-left: 5%;
+}
+
+.new-name {
+  font-family: Laila, serif;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #34495E;
+  border: none;
+  border-bottom: 2px solid #ECF0F1;
+  border-radius: 0;
+  padding: 0;
+  font-size: 29px;
+  resize: none;
+  width: 40%;
+  margin-bottom: 15px;
+  height: 45px;
+  margin-right: 50px;
+}
+
+.a-user.show {
+  margin-bottom: 100px;
+}
+
+.spinner-area {
+  margin: 50px;
+}
+
+#scroll {
+  height: 570px;
+  overflow: auto;
+}
+
+.login-form {
+  clear: both;
+  overflow: hidden;
+  position: relative;
+  padding: 15px;
+}
+
+.email-area, .pass-area {
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 2px solid #ECF0F1;
+}
+
+.auth.signin {
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
+.auth.signin:hover {
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
+.sign-up {
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 2px solid #ECF0F1;
+}
+
+.button.register-button {
+  width: 100%;
+  padding: 6px 12px;
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-transition: .25s;
+  transition: .25s;
+  margin-top: 15px;
+  border-radius: 3px;
+  background: #1abc9c;
+  color: white;
+  border: 1px solid white;
+  margin-top: 0px;
+}
+
+button.register-button:hover {
+  background: white;
+  color: #1abc9c;
+  border: 1px solid #1abc9c;
+}
+
+.small-user-area p {
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: #34495e;
+  margin-bottom: 7px;
+}
+
+.new-body::-webkit-input-placeholder {
+  padding: 12px;
+  font-size: 18px;
+}
+
+.new-body:focus, .new-email:focus {
+  outline: 2px solid #1abc9c;
+}
+
+.new-title:focus, .new-name:focus {
+  outline: none;
+  border-bottom: 2px solid #1abc9c;
+}
+
+.errors p {
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  color: #1abc9c;
+}
+
+.search-no.a-rant {
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  min-height: 200px;
+  text-align: center;
+  line-height: 10;
+}
