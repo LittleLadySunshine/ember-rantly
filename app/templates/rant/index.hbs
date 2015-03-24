@@ -1,0 +1,37 @@
+{{#if isEditing}}
+    <div class="new-rant">
+      <header class="new-rant-header">
+        <div class="new-rant-title">
+          {{textarea value=title class="new-title"}}
+        </div>
+        <div class="new-rant-buttons">
+          <button class="delete-rant fa fa-trash-o" {{action 'deleteRant' this}}>Delete</button>
+          <button class="cancel-rant fa fa-share-square-o" {{action 'cancelRant' this}}>Cancel</button>
+          <button class="save-rant fa fa-save" {{action 'saveRant' this}}>Save</button>
+        </div>
+      </header>
+      <div class="small-user-area">
+        <div class="small-user-photo"></div>
+        <p>{{body.length}} Characters</p>
+        <div class="errors">
+        </div>
+      </div>
+      {{textarea value=body class="new-body"}}
+    </div>
+{{else}}
+    <div class="a-rant">
+      <header class="rant-header">
+        <h3>{{title}}</h3>
+        <button class="edit-rant fa fa-pencil-square-o" {{action 'editRant' this}}>Edit</button>
+      </header>
+      <div class="small-user-area">
+        <div class="small-user-photo"></div>
+        <p>This post is {{body.length}} characters.</p>
+      </div>
+      <p>{{body}}</p>
+    </div>
+{{/if}}
+
+
+
+{{outlet}}

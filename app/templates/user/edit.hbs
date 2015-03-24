@@ -1,0 +1,21 @@
+<div class="new-rant">
+  <header class="new-rant-header">
+    <div class="new-rant-title">
+      {{textarea value=firstName class="new-name"}}
+      {{textarea value=lastName class="new-name"}}
+    </div>
+    <div class="new-rant-buttons">
+      <button class="delete-rant fa fa-trash-o" {{action 'deleteUser' this}}>Delete</button>
+      {{#link-to 'users'}}
+        <button class="cancel-rant fa fa-share-square-o">Cancel</button>
+      {{/link-to}}
+      <button class="save-rant fa fa-save" {{action 'editUser' this}}>Save</button>
+    </div>
+  </header>
+  <div class="small-user-area">
+    <div class="small-user-photo"></div>
+    <div class="errors">
+    </div>
+  </div>
+  {{textarea value=email class="new-email"}}
+</div>

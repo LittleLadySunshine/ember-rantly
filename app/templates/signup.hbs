@@ -1,0 +1,12 @@
+<main>
+  <form class="register-form">
+    {{input class="sign-up" placeholder="First Name" value=first type=text}}
+    {{input class="sign-up" placeholder="Last Name" value=last}}
+    {{input class="sign-up" placeholder="Email" value=email}}<i class="register-field"></i>
+    {{input class="sign-up" placeholder="Password" value=password type="password"}}<i class="register-field"></i>
+    {{input class="sign-up" placeholder="Password Confirmation" value=passwordconfirmation type="password"}}
+    <button class="button register-button" {{action 'newUser'}}>
+      Sign Up
+    </button>
+  </form>
+</main>

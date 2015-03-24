@@ -1,0 +1,28 @@
+<div class="a-user show">
+  <header class="user-header">
+    <h3>{{firstName}} {{lastName}}</h3>
+    {{#link-to 'user.edit'}}
+      <button class="edit-user fa fa-pencil-square-o">Edit</button>
+    {{/link-to}}
+  </header>
+  <div class="small-user-area">
+    <div class="small-user-photo"></div>
+  </div>
+  <p>{{email}}</p>
+</div>
+
+
+
+{{#each rant in rants}}
+  <div class="a-rant">
+    <header class="rant-header">
+      {{#link-to 'rant' rant}}
+        <h3>{{rant.title}}</h3>
+      {{/link-to}}
+    </header>
+    <div class="small-user-area">
+      <div class="small-user-photo"></div>
+    </div>
+    <p>{{rant.body}}</p>
+  </div>
+{{/each}}

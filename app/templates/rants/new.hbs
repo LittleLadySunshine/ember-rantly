@@ -1,0 +1,29 @@
+<div class="new-rant">
+
+  <header class="new-rant-header">
+    <div class="new-rant-title">
+      {{textarea placeholder="Rant Title" value=newTitle class="new-title"}}
+    </div>
+    <div class="new-rant-buttons">
+      <button class="save-rant" {{action 'newRant'}}>Save</button>
+      {{#link-to 'rants'}}
+        <button class="cancel-rant">Cancel</button>
+      {{/link-to}}
+    </div>
+  </header>
+
+  <div class="small-user-area">
+    <div class="small-user-photo"></div>
+    {{#if newBody}}
+      <p>{{newBody.length}} Characters</p>
+    {{else}}
+      <p>0 Characters</p>
+    {{/if}}
+    <div class="errors">
+    </div>
+  </div>
+  {{textarea placeholder="Start your rant." value=newBody class="new-body"}}
+
+</div>
+
+{{outlet}}

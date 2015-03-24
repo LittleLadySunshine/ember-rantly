@@ -1,0 +1,13 @@
+<section class="all-users">
+  {{#each user in model}}
+  <div class="user-block">
+    {{#link-to 'user' user}}
+    <div class="small-user-photo"></div>
+    <div class="user-info">
+      <h5>{{user.firstName}} {{user.lastName}}</h5>
+      <h6>{{user.email}}</h6>
+    </div>
+    {{/link-to}}
+  </div>
+  {{/each}}
+</section>

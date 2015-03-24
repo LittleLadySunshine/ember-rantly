@@ -1,0 +1,39 @@
+{{#if results}}
+  {{#each rant in results}}
+    {{#if isEditing}}
+        <div class="new-rant">
+          <header class="new-rant-header">
+            <div class="new-rant-title">
+              {{textarea value=rant.title class="new-title"}}
+            </div>
+            <div class="new-rant-buttons">
+              <button class="save-rant" {{action 'saveRant' this}}>Save</button>
+              <button class="cancel-rant" {{action 'cancelRant' this}}>Cancel</button>
+              <button class="delete-rant" {{action 'deleteRant' this}}>Delete</button>
+            </div>
+          </header>
+          <div class="small-user-area">
+            <div class="small-user-photo"></div>
+          </div>
+          {{textarea value=rant.body class="new-body"}}
+        </div>
+    {{else}}
+        <div class="a-rant">
+          <header class="rant-header">
+            {{#link-to 'rant' rant}}
+              <h3>{{rant.title}}</h3>
+            {{/link-to}}
+            <button class="edit-rant" {{action 'editRant' post}}>Edit</button>
+          </header>
+          <div class="small-user-area">
+            <div class="small-user-photo"></div>
+          </div>
+          <p>{{rant.body}}</p>
+        </div>
+    {{/if}}
+  {{/each}}
+{{else}}
+  <div class="search-no a-rant">
+    <p>These are not the droids you were looking for.</p>
+  </div>
+{{/if}}

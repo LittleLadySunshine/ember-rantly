@@ -1,3 +1,69 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<!DOCTYPE html>
+<html>
 
-{{outlet}}
+  <head>
+    <title>Rantly</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Laila:400,700' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+    <header class="top-header">
+      <a class="brand" href="/">Rantly</a>
+      <div class="content">
+        {{#link-to 'rants'}}
+          Rants
+        {{/link-to}}
+        {{#link-to 'users'}}
+          Users
+        {{/link-to}}
+
+        {{#if loggedIn}}
+          <span {{action "signOut"}}>
+            {{#link-to "rants"}}
+              Sign Out
+            {{/link-to}}
+          </span>
+        {{else}}
+          {{#link-to 'signup'}}
+            Sign Up
+          {{/link-to}}
+        {{/if}}
+      </div>
+    </header>
+
+    <section class="content">
+      <aside class="rants-navagation">
+        <div class="search">
+          {{input placeholder="Search" value=term class="search-area" type="search" action="doSearch"}}
+        </div>
+
+        {{#if loggedIn}}
+          <div class="user-area">
+            <div class="user-photo"></div>
+          </div>
+          <button class="auth signout" {{action 'signOut'}}>
+            Log Out
+          </button>
+        {{else}}
+          <form class="login-form">
+            {{input class="email-area" placeholder="Your Email" value=email}}
+            {{input class="pass-area" placeholder="Your Password" value=password type="password"}}
+            <button class="auth signin" type="submit" {{action 'signIn'}}>Log In</button>
+            {{#if errorMessage}}
+              <div>{{errorMessage}}</div>
+            {{/if}}
+          </form>
+        {{/if}}
+      </aside>
+
+      <header class="bottom-header">
+        {{#link-to 'rants.new'}}<button class="new-rant">New Rant</button>{{/link-to}}
+      </header>
+
+      <div class="main" id="scroll">
+        {{outlet}}
+      </div>
+    </section>
+  </body>
+
+</html>
