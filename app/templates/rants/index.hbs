@@ -1,5 +1,5 @@
 <section class="all-rants">
-  {{#each itemController="rant.index"}}
+  {{#each rant in controller}}
     {{#if isEditing}}
         <div class="new-rant">
           <header class="new-rant-header">
@@ -23,15 +23,15 @@
     {{else}}
         <div class="a-rant">
           <header class="rant-header">
-            {{#link-to 'rant' this}}
-              <h3>{{title}}</h3>
+            {{#link-to 'rants.id' this}}
+              <h3>{{rants.title}}</h3>
             {{/link-to}}
             <button class="edit-rant fa fa-pencil-square-o" {{action 'editRant' this}}>Edit</button>
           </header>
           <div class="small-user-area">
             <div class="small-user-photo"></div>
           </div>
-          <p>{{body}}</p>
+          <p>{{rants.body}}</p>
         </div>
     {{/if}}
   {{/each}}

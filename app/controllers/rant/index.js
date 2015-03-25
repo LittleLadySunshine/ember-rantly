@@ -2,6 +2,10 @@ import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
   isEditing: false,
+  needs: ['application', 'rant'],
+  sortProperties : ['createdAt'],
+  sortAscending  : false,
+  itemController: 'rant',
 
   actions: {
     editRant: function(){
