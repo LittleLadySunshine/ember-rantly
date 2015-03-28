@@ -19,9 +19,11 @@ export default Ember.Controller.extend({
         this.set('newTitle', '');
         this.set('newBody', '');
         rant.save().then(function(){
-          this.transitionToRoute('rants');
+                this.transitionToRoute('/').then(function() {
+                  window.location.reload(true);
+                });
         }.bind(this));
-      }
     }
   }
+ }
 });

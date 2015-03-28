@@ -7,5 +7,6 @@ export default DS.Model.extend({
   password: DS.attr('string'),
   passwordConfirmation: DS.attr('string'),
 
-  rants: DS.hasMany('rant')
+  rants: DS.hasMany('rant', { async: true }),
+  session: DS.hasMany('session', { async: true })
 });
