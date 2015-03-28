@@ -1,41 +1,47 @@
 <section class="all-rants">
   {{#each rant in controller}}
-    {{#if isEditing}}
+    {{#if rant.isEditing}}
         <div class="new-rant">
           <header class="new-rant-header">
             <div class="new-rant-title">
-              {{textarea value=title class="new-title"}}
+              {{textarea value=rant.title class="new-title"}}
             </div>
-            <div class="new-rant-buttons">
-              <button class="delete-rant fa fa-trash-o" {{action 'deleteRant' this}}>Delete</button>
-              <button class="cancel-rant fa fa-share-square-o" {{action 'cancelRant' this}}>Cancel</button>
-              <button class="save-rant fa fa-save" {{action 'saveRant' this}}>Save</button>
-            </div>
+
+            {{#if rant.belongsToUser}}
+              <div class="new-rant-buttons">
+                <button class="delete-rant fa fa-trash-o" {{action 'deleteRant' rant}}>Delete</button>
+                <button class="cancel-rant fa fa-share-square-o" {{action 'cancelRant' rant}}>Cancel</button>
+                <button class="save-rant fa fa-save" {{action 'saveRant' rant}}>Save</button>
+              </div>
+            {{/if}}
+
           </header>
           <div class="small-user-area">
             <div class="small-user-photo"></div>
-            <p>{{body.length}} Characters</p>
+            <p>{{rant.body.length}} Characters</p>
             <div class="errors">
             </div>
           </div>
-          {{textarea value=body class="new-body"}}
+          {{textarea value=rant.body class="new-body"}}
         </div>
     {{else}}
         <div class="a-rant">
           <header class="rant-header">
-            {{#link-to 'rants.id' this}}
-              <h3>{{rants.title}}</h3>
+            {{#link-to 'rant' rant.id}}
+              <h3>{{rant.title}}</h3>
             {{/link-to}}
-            <button class="edit-rant fa fa-pencil-square-o" {{action 'editRant' this}}>Edit</button>
+
+            {{#if rant.belongsToUser}}
+              <button class="edit-rant fa fa-pencil-square-o" {{action 'editRant' this}}>Edit</button>
+            {{/if}}
+
           </header>
           <div class="small-user-area">
             <div class="small-user-photo"></div>
           </div>
-          <p>{{rants.body}}</p>
+          <p>{{rant.body}}</p>
         </div>
     {{/if}}
   {{/each}}
 
 </section>
-
-{{outlet}}

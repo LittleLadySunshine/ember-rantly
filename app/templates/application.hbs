@@ -13,11 +13,11 @@
         {{#link-to 'rants'}}
           Rants
         {{/link-to}}
-        {{#link-to 'users'}}
-          Users
-        {{/link-to}}
 
         {{#if loggedIn}}
+          {{#link-to 'users'}}
+            Users
+          {{/link-to}}
           <span {{action "signOut"}}>
             {{#link-to "rants"}}
               Sign Out
@@ -46,6 +46,8 @@
           </button>
         {{else}}
           <form class="login-form">
+            <div class="errors-login">
+            </div>
             {{input class="email-area" placeholder="Your Email" value=email}}
             {{input class="pass-area" placeholder="Your Password" value=password type="password"}}
             <button class="auth signin" type="submit" {{action 'signIn'}}>Log In</button>
@@ -57,7 +59,9 @@
       </aside>
 
       <header class="bottom-header">
-        {{#link-to 'rants.new'}}<button class="new-rant">New Rant</button>{{/link-to}}
+        {{#if loggedIn}}
+          {{#link-to 'rants.new'}}<button class="new-rant">New Rant</button>{{/link-to}}
+        {{/if}}
       </header>
 
       <div class="main" id="scroll">
@@ -65,5 +69,3 @@
       </div>
     </section>
   </body>
-
-</html>
