@@ -31,10 +31,6 @@ export default Ember.Controller.extend({
     }
   }.property().volatile(),
 
-  // setupController: function(controller) {
-  //   controller.reset();
-  // },
-
   reset: function() {
     this.setProperties({
       email: "",
@@ -85,7 +81,6 @@ export default Ember.Controller.extend({
             localStorage.setItem('authToken', session._data.token);
             localStorage.setItem('currentUser', session._data.user.id);
             controller.set('currentUser', session._data.user);
-            // console.log(controller.currentUser);
             controller.transitionToRoute('rants');
           } else {
             Ember.$(".errors-login").append("<p>" + "The email and password do not match." + "</p>");
